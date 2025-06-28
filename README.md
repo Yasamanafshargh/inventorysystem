@@ -63,7 +63,7 @@ Ensure you have the following installed on your system:
 ### Steps
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/inventory-management-system.git
+   git clone https://github.com/Yasamanafshargh/inventorysystem.git
    cd inventory-management-system
    ```
 2. **Create a virtual environment and activate it:**
