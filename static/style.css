@@ -1,0 +1,183 @@
+body{
+    background-image: url("8.jpg");
+    background-repeat: repeat-y;
+    background-size: 1920px 1620px;
+    
+}
+
+.my-card:hover{
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+.button {
+    transition-duration: 0.4s;
+  }
+  
+.button:hover {
+    background-color: #fe0a0a;
+    padding: 4px 5px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.button1 {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 6px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Fixed link/text styling */
+.fixed-link {
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 0px; /* Distance from top */
+    right: 10px; /* Distance from right */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+    padding: 0;
+    background-color: #ff7b00; /* Optional: Background color for visibility */
+    padding: 2px 6px; /* Optional: Padding around the text */
+    border-radius: 5px; /* Optional: Rounded corners */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* X-offset, Y-offset, Blur-radius, Color */
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.fixed-class {
+    position: fixed;
+    top: 0px;
+    right: 160px;
+}
+
+.fixed-class1 {
+    position: fixed;
+    top: 0px;
+    right: 80px;
+}
+.logout-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Limit the width */
+    width: 100%; /* Full width up to max-width */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; 
+}
+
+/* Customize Navbar Colors */
+.custom-navbar {
+    background:linear-gradient(to left, #c700c058, #2c33fe55);  /* Dark background for the navbar */
+    padding: 3px;
+    opacity: 1;
+}
+
+.custom-navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.custom-navbar .nav-link {
+    color: white; /* White text for navbar links */
+    font-size: 1.1rem;
+    padding: 10px 15px; /* Adding padding to links for better spacing */
+}
+
+.custom-navbar .nav-link:hover {
+    background-color: #34495e; /* Darker hover effect */
+    color: #ecf0f1; /* Lighter text color on hover */
+}
+
+/* Login/Logout Button Styles */
+.custom-navbar .btn-link {
+    color: white; /* Keep login/logout buttons white */
+}
+
+.custom-navbar .btn-link:hover {
+    color: #ecf0f1; /* Lighter text on hover */
+}
+
+/* Navbar Collapse (hamburger menu) */
+@media (max-width: 768px) {
+    .custom-navbar .navbar-nav {
+        text-align: center;
+    }
+
+    .custom-navbar .navbar-toggler {
+        border-color: #ecf0f1; /* Light border for the toggle button */
+    }
+}
+
+.custom-form {
+    background:linear-gradient(to left, #c700c058, #2c33fe55); 
+}
+.p1 {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+.customcard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-header.bg-primary {
+    background-color: rgba(153, 0, 255, 0.879) !important; /* Dark blue color */
+}
+
+.bg-image {
+    /* The image used */
+    background-image: url("8.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+  }
+
+/* Fade-in animation (uses Animate.css classes) */
+.animate__fadeIn {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card title hover effect */
+.card-hover .card-title {
+    transition: color 0.3s ease;
+}
+
+.card-hover:hover .card-title {
+    color: rgba(153, 0, 255, 0.879);
+}

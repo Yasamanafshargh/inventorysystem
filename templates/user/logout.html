@@ -1,0 +1,25 @@
+{% extends 'partials/base.html' %}
+{% block title %} Logout Page {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-center align-items-center p-3 border-radius: 25px; background-color: rgb(255 255 255 / 0%);">
+    <div class="p-3 rounded">
+      <h1 class="text-center" style="color:rgba(255, 255, 255, 0.929);">You have been logged out!</h1>
+      <p class="text-center" style="color:rgba(255, 255, 255, 0.796);">Thank you for using our app. You have been successfully logged out.</p>
+
+      <form method="post" action="{% url 'user-login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form|crispy }}
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-lg">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="styles.css">
+{% endblock content %}

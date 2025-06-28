@@ -1,0 +1,145 @@
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+<!--Graphs-->
+    <div class="container">
+        <div class="row my-5">
+            <!-- Left Chart -->
+            <div class="col-md-6">
+                <div class="bg-white p-3 shadow-sm rounded">
+                    <!-- Text inside the left chart box -->
+                    <p class="text-center mb-2" style="font-size: 14px; font-weight: bold;">Products per Orders</p>
+                    <canvas id="myChart1" width="400" height="300"></canvas>
+                    <script>
+                        var ctx = document.getElementById('myChart1').getContext('2d');
+                        var myChart1 = new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: [{% for order in orders %} '{{ order.product.name }}', {% endfor %}],
+                                datasets: [{
+                                    label: 'Products',
+                                    data: [{% for order in orders %} {{ order.order_quantity }}, {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.8)',
+                                        'rgba(54, 162, 235, 0.8)',
+                                        'rgba(255, 206, 86, 0.8)',
+                                        'rgba(75, 192, 192, 0.8)',
+                                        'rgba(153, 102, 255, 0.8)',
+                                        'rgba(255, 159, 64, 0.8)',
+                                        'rgba(25, 99, 12, 0.8)',
+                                        'rgba(54, 162, 235, 0.8)',
+                                        'rgba(2, 26, 86, 0.8)',
+                                        'rgba(75, 192, 192, 0.8)',
+                                        'rgba(13, 102, 55, 0.8)',
+                                        'rgba(55, 19, 4, 0.8)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 12, 135, 1)',
+                                        'rgba(25, 26, 6, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(13, 2, 25, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                    title: {
+                                        display: false // Disable the default title
+                                    }
+                                },
+                                animation: {
+                                    animateScale: true,
+                                    animateRotate: true
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- Right Chart -->
+            <div class="col-md-6">
+                <div class="bg-white p-3 shadow-sm rounded">
+                    <!-- Text inside the right chart box -->
+                    <p class="text-center mb-2" style="font-size: 14px; font-weight: bold;">Products per Count</p>
+                    <canvas id="myChart" width="400" height="300"></canvas>
+                    <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: [{% for product in products %} '{{ product.name }}', {% endfor %}],
+                                datasets: [{
+                                    label: 'Quantity',
+                                    data: [{% for product in products %} '{{ product.quantity }}', {% endfor %}],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.8)',
+                                        'rgba(54, 162, 235, 0.8)',
+                                        'rgba(255, 206, 86, 0.8)',
+                                        'rgba(75, 192, 192, 0.8)',
+                                        'rgba(153, 102, 255, 0.8)',
+                                        'rgba(255, 159, 64, 0.8)',
+                                        'rgba(140, 100, 12, 0.8)',
+                                        'rgba(170, 62, 25, 0.8)',
+                                        'rgba(163, 203, 27, 0.8)',
+                                        'rgba(7, 12, 12, 0.8)',
+                                        'rgba(13, 102, 255, 0.8)',
+                                        'rgba(160, 19, 64, 0.8)',
+                                        'rgba(250, 62, 25, 0.8)',
+                                        'rgba(25, 26, 6, 0.8)',
+                                        'rgba(2, 4, 6, 0.8)',
+                                        'rgba(208, 102, 255, 0.8)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        display: false,
+                                    },
+                                    title: {
+                                        display: false // Disable the default title
+                                    }
+                                },
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                },
+                                animation: {
+                                    duration: 1000,
+                                    easing: 'easeInOutQuart'
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endif %}

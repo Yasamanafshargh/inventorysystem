@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .fade-in-delayed {
+            animation: fadeIn 1.5s ease-in-out 0.5s;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+        <div class="loader border-t-4 border-purple-600 w-12 h-12 rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white w-full min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 fade-in">Inventory Management System</h1>
+            <p class="text-lg md:text-xl mb-8 fade-in-delayed">
+                Access sale's data and visualize it to analyze data easily to increase your sales!
+            </p>
+            <a href="{% url 'user-login' %}" class="bg-white text-purple-600 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 fade-in-delayed">
+                Get Started
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Yasaman Afshar Ghasemloo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hide loading spinner after the page loads
+        window.addEventListener("load", () => {
+            document.getElementById("loading").style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
