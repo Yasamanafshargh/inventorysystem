@@ -93,8 +93,7 @@ Ensure you have the following installed on your system:
 ## Summary
 This **Inventory Management System** provides an intuitive interface for admins and staff to manage inventory efficiently. By leveraging Django’s powerful architecture and ORM, the system ensures smooth data management and scalability.
 
-## Screenshots
-![App Screenshot](screenshots/inventory landing page.png)
+
 ---
 
 **Author:** Yasaman Afshar Ghasemloo  
